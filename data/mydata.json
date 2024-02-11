@@ -1,0 +1,85 @@
+{
+  "_id": {
+    "$oid": "65c54d2a53299eedb5802a67"
+  },
+  "items": [
+    {
+      "name": "Alpaca",
+      "price": "$ 30.00",
+      "images": [
+        "images/alpaca.webp"
+      ],
+      "other_info": "Nestled in soft, huggable fur, this adorable stuffed animal features big, round eyes that sparkle with innocence, capturing hearts at first glance."
+    },
+    {
+      "name": "Brown Lama",
+      "price": "$ 40.00",
+      "images": [
+        "images/brownlama.webp",
+        "images/brownlama2.webp"
+      ],
+      "other_info": "With a charming stitched smile and plush, cuddly body, this sweet stuffed animal is the perfect companion for cozy bedtime hugs and imaginative play."
+    },
+    {
+      "name": "Cow",
+      "price": "$ 50.00",
+      "images": [
+        "images/cow.webp",
+        "images/cow2.webp"
+      ],
+      "other_info": "Its fuzzy ears perk up inquisitively, adding an extra touch of charm to this endearing stuffed creature, making it irresistibly cute and delightful."
+    },
+    {
+      "name": "Goose",
+      "price": "$ 40.00",
+      "images": [
+        "images/goose.webp",
+        "images/goose2.webp"
+      ],
+      "other_info": "The gentle squishiness of its plush form invites tender squeezes, turning it into a cherished friend that brings warmth and comfort to all who embrace it."
+    },
+    {
+      "name": "Lama",
+      "price": "$ 40.00",
+      "images": [
+        "images/brownlammma.webp"
+      ],
+      "other_info": "Sporting a playful demeanor, this little stuffed buddy boasts a whimsical expression that invites joy and companionship, making it impossible to resist its charm."
+    },
+    {
+      "name": "Monkey",
+      "price": "$ 40.00",
+      "images": [
+        "images/monkey.webp"
+      ],
+      "other_info": "Adorned with a tiny bow and fuzzy paws, this lovable stuffed animal radiates sweetness, becoming a delightful confidant for both laughter-filled adventures and quiet moments of comfort."
+    },
+    {
+      "name": "Owl",
+      "price": "$ 40.00",
+      "images": [
+        "images/owel.webp",
+        "images/owl2.webp"
+      ],
+      "other_info": "Its petite size and soft, pastel-colored fur make this endearing plush creature a perfect snuggle buddy, bringing a touch of enchantment to every cuddle session."
+    },
+    {
+      "name": "Turkey",
+      "price": "$ 60.00",
+      "images": [
+        "images/turkey.webp",
+        "images/turkey2.webp"
+      ],
+      "other_info": "With a velvety touch and an enchanting expression, this lovable stuffed companion is a heartwarming reminder that even the smallest cuddles can bring immense joy."
+    },
+    {
+      "name": "Zebra",
+      "price": "$ 70.00",
+      "images": [
+        "images/zebra.webp",
+        "images/zebra2.webp"
+      ],
+      "other_info": "Go on adventures with the cute, cuddly and friendly Zebra. It will take you on the best adventures."
+    }
+  ]
+}

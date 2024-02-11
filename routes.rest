@@ -1,0 +1,33 @@
+// LOCALHOST
+### Get all contacts
+GET http://localhost:8080/contacts
+
+### Get contact by id
+GET http://localhost:8080/contacts/65aab3b7899d835025c77f20
+
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1 content-type: application/json
+
+### PUT contact
+PUT http://localhost:8080/contacts/65b297709aae3e2b848cda7d HTTP/1.1 content-type: application/json
+
+
+### DELETE contact
+DELETE http://localhost:8080/contacts/65b297709aae3e2b848cda7d
+
+// render requests
+### Get all contacts
+GET https://webservices-cse341-with-mongodb.onrender.com/contacts
+
+### Get contact by id
+GET https://webservices-cse341-with-mongodb.onrender.com/contacts/65aab3b7899d835025c77f20
+
+### Create contact
+POST https://webservices-cse341-with-mongodb.onrender.com/contacts HTTP/1.1 content-type: application/json
+
+### PUT contact
+PUT https://webservices-cse341-with-mongodb.onrender.com/contacts/65aab3b1899d835025c77f1f HTTP/1.1 content-type: application/json
+
+
+### DELETE contact
+DELETE https://webservices-cse341-with-mongodb.onrender.com/contacts/65aab3b1899d835025c77f1f
