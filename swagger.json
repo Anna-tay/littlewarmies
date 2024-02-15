@@ -20,9 +20,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -60,9 +57,6 @@
           },
           "422": {
             "description": "Unprocessable Entity"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -112,7 +106,7 @@
                   "example": "YYYY/MM/DD"
                 },
                 "image_paths": {
-                  "example": ["any"]
+                  "example": []
                 },
                 "definition": {
                   "example": "any"
@@ -124,9 +118,6 @@
         "responses": {
           "204": {
             "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
@@ -141,11 +132,8 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "200": {
+            "description": "OK"
           }
         }
       }
