@@ -108,7 +108,7 @@ const putLittleWarmies= async (req, res) => {
       .collection(collection_name)
       .replaceOne({_id: userId}, updateLittleWarmies);
 
-    if (response.modifiedCount > 0) {
+    if (result.modifiedCount > 0) {
       res.status(204).send();
     };
   }catch (error) {
