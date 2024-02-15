@@ -79,7 +79,7 @@ const newLittleWarmies = async (req, res) => {
     const response = await mongodb
       .getDb()
       .db()
-      .collection('littlelightwarmies')
+      .collection(collection_name)
       .insertOne(littleWarmies);
 
     if (response.acknowledged) {
@@ -105,7 +105,7 @@ const putLittleWarmies= async (req, res) => {
     const result = await mongodb
       .getDb()
       .db()
-      .collection('littlelightwarmies')
+      .collection(collection_name)
       .replaceOne({_id: userId}, updateLittleWarmies);
 
     if (response.modifiedCount > 0) {
@@ -124,7 +124,7 @@ const delLittleWarmies = async (req, res) => {
     const response = await mongodb
       .getDb()
       .db()
-      .collection('littlelightwarmies').deleteOne({ _id: userId }, true);
+      .collection(collection_name).deleteOne({ _id: userId }, true);
     console.log(response);
 
     if (response.deletedCount > 0) {
