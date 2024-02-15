@@ -128,7 +128,7 @@ const delLittleWarmies = async (req, res) => {
     console.log(response);
 
     if (response.deletedCount > 0) {
-      res.status(204).send();
+      res.status(200).send();
     }
   }catch (error) {
     errorHandling(res, error);
