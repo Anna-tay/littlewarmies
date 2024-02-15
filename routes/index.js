@@ -3,7 +3,16 @@ const express = require('express');
 const router = express.Router();
 
 //routes
-router.use('/warmies', require('./warmies'));
-router.use('/', require('./swagger'));
+try{
+    router.use('/warmies', require('./warmies'));
+    router.use('/', require('./swagger'));
+}catch (error){
+    console.log(error)
+
+    let myError = document.createElement("p");
+    myError.innerHTML = "Page not found. Sorry!" + error;
+    document.body.appendChild(myError);
+
+}
 
 module.exports = router;

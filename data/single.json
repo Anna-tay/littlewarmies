@@ -1,8 +1,10 @@
 {
-    "name": "Lama",
-    "price": "$ 40.00",
-    "images": [
-      "images/brownlammma.webp"
-    ],
-    "other_info": "Sporting a playful demeanor, this little stuffed buddy boasts a whimsical expression that invites joy and companionship, making it impossible to resist its charm."
-  }
+  "name": "Zorro Zebra",
+  "price": 70.00,
+  "launch_date": "2024-04-23",
+  "image_paths": [
+    "images/zebra.webp",
+    "images/zebra2.webp"
+  ],
+  "definition": "Go on adventures with the cute, cuddly and friendly Zebra. It will take you on the best adventures."
+}
