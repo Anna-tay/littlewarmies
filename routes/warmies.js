@@ -12,13 +12,13 @@ router.get('/:id', contactCon.getOne);
 
 //create statement
 // this is were we do all the validation
-router.post('/', userValidationRules(), validate, contactCon.newLittleWarmies);
+router.post('/create', userValidationRules(), validate, contactCon.newLittleWarmies);
 
 // update statement
-router.put('/:id', contactCon.putLittleWarmies);
+router.put('/update/:id', contactCon.putLittleWarmies);
 
 // delete statement
-router.delete('/:id', contactCon.delLittleWarmies);
+router.delete('/del/:id', contactCon.delLittleWarmies);
 
 
 module.exports = router;

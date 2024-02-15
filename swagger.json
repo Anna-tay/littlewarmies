@@ -22,7 +22,30 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/warmies/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/warmies/create": {
       "post": {
         "description": "",
         "parameters": [
@@ -61,26 +84,7 @@
         }
       }
     },
-    "/warmies/{id}": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/warmies/update/{id}": {
       "put": {
         "description": "",
         "parameters": [
@@ -120,7 +124,9 @@
             "description": "No Content"
           }
         }
-      },
+      }
+    },
+    "/warmies/del/{id}": {
       "delete": {
         "description": "",
         "parameters": [
