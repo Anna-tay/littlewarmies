@@ -5,6 +5,7 @@ const router = express.Router();
 //routes
 try{
     router.use('/warmies', require('./warmies'));
+    router.use('/orders', require('./orders' ))
     router.use('/', require('./swagger'));
 }catch (error){
     console.log(error)

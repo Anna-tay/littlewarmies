@@ -59,13 +59,13 @@
                   "example": "any"
                 },
                 "price": {
-                  "example": 30.00
+                  "example": "any"
                 },
                 "launch_date": {
-                  "example": "YYYY/MM/DD"
+                  "example": "any"
                 },
                 "image_paths": {
-                  "example": []
+                  "example": "any"
                 },
                 "definition": {
                   "example": "any"
@@ -75,6 +75,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "201": {
             "description": "Created"
           },
@@ -104,13 +107,13 @@
                   "example": "any"
                 },
                 "price": {
-                  "example": 30.00
+                  "example": "any"
                 },
                 "launch_date": {
-                  "example": "YYYY/MM/DD"
+                  "example": "any"
                 },
                 "image_paths": {
-                  "example": []
+                  "example": "any"
                 },
                 "definition": {
                   "example": "any"
@@ -140,6 +143,78 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/orders/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/orders/del/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/orders/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/orders/auth": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/orders/orders": {
+      "get": {
+        "description": "",
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

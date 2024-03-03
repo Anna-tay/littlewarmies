@@ -1,6 +1,6 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
-const collection_name = 'littlelightwarmies'
+const collection_name = 'orders'
 
 //deleting an entry
 function errorHandling(res, error) {
@@ -29,7 +29,7 @@ function errorHandling(res, error) {
 }
 
 // getting all the littlelightwarmies
-const getAll = async (req, res) => {
+const getAllOrders = async (req, res) => {
   try {
       // .find finds everything in there
       const cursor = await mongodb.getDb().db().collection(collection_name).find({});
@@ -46,14 +46,14 @@ const getAll = async (req, res) => {
 };
 
 //getting single one
-const getOne= async (req, res) => {
+const getOneOrder= async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
       .db()
       .collection(collection_name)
-      .find({ _id: userId });
+      .find({ warmie_id: userId });
     console.log(result);
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
@@ -64,63 +64,9 @@ const getOne= async (req, res) => {
   }
 };
 
-//post route
-//creating a new entry
-const newLittleWarmies = async (req, res) => {
-  try{
-    littleWarmies ={
-      name: req.body.name,
-      price: req.body.price,
-      launch_date: req.body.launch_date,
-      image_paths: req.body.image_paths,
-      definition: req.body.definition
-    }
-    console.log(TOKEN)
-    console.log("token in ")
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection(collection_name)
-      .insertOne(littleWarmies);
-
-    if (response.acknowledged) {
-      res.status(201).json('new contact has been created' + littleWarmies);
-    }
-  }catch (error) {
-    errorHandling(res, error);
-    res.json({ error: 'cannot access with without Token' });
-  }
-};
-
-// updating one entry
-const putLittleWarmies= async (req, res) => {
-  try{
-    updateLittleWarmies ={
-      name: req.body.name,
-      price: req.body.price,
-      launch_date: req.body.launch_date,
-      image_paths: req.body.image_paths,
-      definition: req.body.definition
-    }
-
-    const userId = new ObjectId(req.params.id);
-    const result = await mongodb
-      .getDb()
-      .db()
-      .collection(collection_name)
-      .replaceOne({_id: userId}, updateLittleWarmies);
-
-    if (result.modifiedCount > 0) {
-      res.status(204).send();
-    };
-  }catch (error) {
-    errorHandling(res, error);
-  }
-};
-
 
 //deleting an entry
-const delLittleWarmies = async (req, res) => {
+const delOrder = async (req, res) => {
   try{
     const userId = new ObjectId(req.params.id);
     const response = await mongodb
@@ -137,11 +83,34 @@ const delLittleWarmies = async (req, res) => {
   }
 };
 
+const authorize = async (req, res) => {
+  console.log('it went in')
+  res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`)
+}
+
+const logout = async (req, res) => {
+  const body = {
+    client_id: process.env.GITHUB_CLIENT_ID,
+    client_secret: process.env.GITHUB_SECRET,
+    code,
+  };
+  const opts = { headers: { accept: 'application/json'} };
+  axios
+    .post('https://github.com/login/oauth/access_token', body, opts)
+    .then((_res) => _res.data.access_token)
+    .then((token) => {
+      console.log("my token:", token);
+
+      res.redirect(`/?token=${token}`);
+    })
+    .catch((err) => res.status(500).json({ err: err.message}))
+}
+
 
 module.exports = {
-  getAll,
-  getOne,
-  newLittleWarmies,
-  putLittleWarmies,
-  delLittleWarmies
+  getAllOrders,
+  getOneOrder,
+  delOrder,
+  authorize,
+  logout
 };

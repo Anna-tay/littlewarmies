@@ -1,10 +1,6 @@
 {
-  "name": "Zorro Zebra",
-  "price": 70.00,
-  "launch_date": "2024-04-23",
-  "image_paths": [
-    "images/zebra.webp",
-    "images/zebra2.webp"
-  ],
-  "definition": "Go on adventures with the cute, cuddly and friendly Zebra. It will take you on the best adventures."
+  "User_name": "Sarah Johnson",
+  "warmie_name": "Joey Turkey",
+  "warmie_id": "65ce361c40c723250600ad38",
+  "send_date": "2024-02-28"
 }
