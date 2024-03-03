@@ -45,6 +45,55 @@ const getAllOrders = async (req, res) => {
   }
 };
 
+//creating a new entry
+const newOrder = async (req, res) => {
+    try{
+      littleWarmies ={
+        user_name: req.body.user_name,
+        warmie_name: req.body.warmie_name,
+        warmie_id: req.body.warmie_id,
+        send_date: req.body.send_date,
+      }
+      const response = await mongodb
+        .getDb()
+        .db()
+        .collection(collection_name)
+        .insertOne(littleWarmies);
+  
+      if (response.acknowledged) {
+        res.status(201).json('new contact has been created' + littleWarmies);
+      }
+    }catch (error) {
+      errorHandling(res, error);
+      res.json({ error: 'cannot access with without Token' });
+    }
+  };
+  
+  // updating one entry
+  const putOrder= async (req, res) => {
+    try{
+      updateOrders ={
+        user_name: req.body.user_name,
+        warmie_name: req.body.warmie_name,
+        warmie_id: req.body.warmie_id,
+        send_date: req.body.send_date,
+      }
+  
+      const userId = new ObjectId(req.params.id);
+      const result = await mongodb
+        .getDb()
+        .db()
+        .collection(collection_name)
+        .replaceOne({_id: userId}, updateOrders);
+  
+      if (result.modifiedCount > 0) {
+        res.status(204).send();
+      };
+    }catch (error) {
+      errorHandling(res, error);
+    }
+};
+
 //deleting an entry
 const delOrder = async (req, res) => {
   try{
@@ -89,7 +138,8 @@ const logout = async (req, res) => {
 
 module.exports = {
   getAllOrders,
-  getOneOrder,
+  newOrder,
+  putOrder,
   delOrder,
   authorize,
   logout

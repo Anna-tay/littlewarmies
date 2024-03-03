@@ -75,8 +75,6 @@ const newLittleWarmies = async (req, res) => {
       image_paths: req.body.image_paths,
       definition: req.body.definition
     }
-    console.log(TOKEN)
-    console.log("token in ")
     const response = await mongodb
       .getDb()
       .db()

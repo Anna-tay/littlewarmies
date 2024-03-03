@@ -5,12 +5,17 @@ let TOKEN = false
 
 const contactCon = require('../controller/orders');
 
+// this is were we do all the validation
+router.post('/create', contactCon.newOrder);
+
+// update statement
+router.put('/update/:id', contactCon.putOrder);
+
 if (TOKEN){
         router.get('/', contactCon.getAllOrders);
         // delete statement
         router.delete('/del/:id', contactCon.delOrder);
     }
-
 
 
 
