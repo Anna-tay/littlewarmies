@@ -11,8 +11,6 @@ if (TOKEN){
         router.delete('/del/:id', contactCon.delOrder);
     }
 
-// Gets all orders on an Id
-router.get('/:id', contactCon.getOneOrder);
 
 
 

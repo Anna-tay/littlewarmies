@@ -45,26 +45,6 @@ const getAllOrders = async (req, res) => {
   }
 };
 
-//getting single one
-const getOneOrder= async (req, res) => {
-  try {
-    const userId = new ObjectId(req.params.id);
-    const result = await mongodb
-      .getDb()
-      .db()
-      .collection(collection_name)
-      .find({ warmie_id: userId });
-    console.log(result);
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    });
-  }catch (error) {
-    errorHandling(res, error);
-  }
-};
-
-
 //deleting an entry
 const delOrder = async (req, res) => {
   try{
